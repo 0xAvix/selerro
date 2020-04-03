@@ -1,9 +1,10 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+require("dotenv").config();
 
 const config = {
-  apiKey: "AIzaSyCHzRB4ie5EHoh5HSRx9TK80yJOaBWMHps",
+  apiKey: process.env.GOOGLE_API_KEY,
   authDomain: "selerro-db.firebaseapp.com",
   databaseURL: "https://selerro-db.firebaseio.com",
   projectId: "selerro-db",
