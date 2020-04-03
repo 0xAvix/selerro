@@ -9,12 +9,13 @@
   "description": "An ecommerce web app built with the FERN stack.",
   "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix client",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
     "build": "cd client && npm run build",
-    "dev": "concurrently --kill-others-on-fail \"npm run server \" \" npm run client \"",
+    "dev": "concurrently \"npm run server \" \" npm run client \"",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
