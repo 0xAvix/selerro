@@ -1,0 +1,39 @@
+.more-menu-mobile {
+  z-index: 5;
+  display: block;
+  height: 90px;
+  width: 95px;
+  position: relative;
+  bottom: 62.5px;
+  left: 90px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .more-menu-item {
+    font-weight: bold;
+    font-size: 1.25em;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+      border-radius: 5px;
+    }
+
+    &:first-child {
+      margin-bottom: 9px;
+    }
+
+    .more-menu-link {
+      padding: 5px;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

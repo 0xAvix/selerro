@@ -1,0 +1,54 @@
+.mobile-view {
+  display: flex;
+  width: 590px;
+
+  @media screen and (max-width: 850px) {
+    display: none;
+  }
+}
+
+.logo-text-container {
+  display: inline-block;
+  position: relative;
+  right: 18.5%;
+
+  @media screen and (max-width: 1665px) and (min-width: 1551px) {
+    right: 17%;
+  }
+
+  @media screen and (max-width: 1550px) and (min-width: 1326px) {
+    right: 15%;
+  }
+
+  @media screen and (max-width: 1325px) and (min-width: 1151px) {
+    right: 14%;
+  }
+
+  @media screen and (max-width: 1150px) and (min-width: 851px) {
+    right: 13%;
+  }
+
+  @media screen and (max-width: 850px) and (min-width: 801px) {
+    right: 1.5%;
+  }
+
+  @media screen and (max-width: 800px) and (min-width: 501px) {
+    right: 6%;
+    bottom: 15%;
+  }
+
+  @media screen and (max-width: 500px) {
+    bottom: 15%;
+    right: -12%;
+  }
+}
+
+.cart-icon-container-mobile {
+  display: inline-block;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    bottom: 11px;
+    left: 30px;
+  }
+}

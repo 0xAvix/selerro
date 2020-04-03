@@ -1,0 +1,67 @@
+.contact-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 160px;
+
+  @media screen and (max-width: 800px) {
+    position: relative;
+    left: 12.5px;
+  }
+
+  .title {
+    margin: 25px 0;
+    font-size: 40px;
+  }
+
+  .description {
+    line-height: 1.65rem;
+    font-size: 18px;
+  }
+}
+
+textarea {
+  resize: none;
+  border-top: 1px solid gray;
+  font-family: inherit;
+  font-size: inherit;
+
+  &::placeholder {
+    font-family: "Open Sans Condensed";
+    font-size: 16px;
+  }
+}
+
+.contact-link {
+  text-decoration: underline;
+
+  &:hover {
+    font-weight: bolder;
+  }
+}
+
+.message-sent {
+  text-align: center;
+  padding: 10px;
+  background-color: #79c879;
+  color: #fff;
+  margin-bottom: 25px;
+  width: 350px;
+  height: 45px;
+  font-size: 18px;
+  display: none;
+}
+
+.your-message-is-empty {
+  text-align: center;
+  padding: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  margin-bottom: 25px;
+  width: 350px;
+  height: 45px;
+  font-size: 18px;
+  display: none;
+}

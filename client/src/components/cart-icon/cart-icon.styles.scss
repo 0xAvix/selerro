@@ -1,0 +1,41 @@
+.cart-icon {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  .shopping-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .item-count {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bolder;
+    bottom: 10px;
+  }
+}
+
+// svg:hover {
+//   color: #ffffff;
+// }
+
+// .cart-icon:hover .shopping-icon {
+//   color: #fff;
+// }
+
+// .shopping-icon:hover {
+//   fill: #fff;
+// }
+
+// .cart-icon svg:hover {
+//   fill: #fff;
+// }
+
+// svg:hover g path {
+//   stroke: #fff;
+// }
