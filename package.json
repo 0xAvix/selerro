@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "engines": {
     "node": "13.11.0",
-    "npm": "6.14.2"
+    "npm": "6.14.2",
+    "yarn": "1.22.0"
   },
   "description": "An ecommerce web app built with the FERN stack.",
   "main": "server.js",
@@ -12,8 +13,7 @@
     "server": "nodemon server.js",
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"npm run server \" \" npm run client \"",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
