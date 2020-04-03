@@ -3,6 +3,8 @@ SELERRO:
 1.) Final deployment to Heroku (with SSL certificate)
     (run "heroku certs:auto(:enable) --remote prod" on cmd.exe & go to https://selerro.com)
 
+2.) Deploy the app, add link on Github, Resume and to Blagoje
+
 OTHER PROJECTS, RESUME & GITHUB PROFILE:
 
 1.) Finish the portfolio website (CSS + Animations)
