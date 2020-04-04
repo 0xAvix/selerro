@@ -9,6 +9,7 @@
   @media screen and (max-width: 800px) {
     position: relative;
     left: 12.5px;
+    margin-top: 40px;
   }
 
   .title {
@@ -19,6 +20,7 @@
   .description {
     line-height: 1.65rem;
     font-size: 18px;
+    width: 80vw;
   }
 }
 
