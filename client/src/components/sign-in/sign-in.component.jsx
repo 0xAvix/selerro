@@ -7,25 +7,25 @@ import GoogleButton from "react-google-button";
 import { connect } from "react-redux";
 import {
   googleSignInStart,
-  emailSignInStart
+  emailSignInStart,
 } from "../../redux/user/user.actions.js";
 import { useMediaQuery } from "react-responsive";
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const [userInfo, setUserInfo] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const { email, password } = userInfo;
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     emailSignInStart(email, password);
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     setUserInfo({ ...userInfo, [name]: value });
@@ -61,7 +61,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
         <div
           style={{
             display: "flex",
-            flexDirection: "row"
+            flexDirection: "row",
           }}
         >
           <button type="submit" className="custom-button sign-in-button">
@@ -77,7 +77,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                 position: "relative",
                 bottom: "2.5px",
                 fontSize: "1.15rem",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               OR
@@ -91,7 +91,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                 position: "relative",
                 bottom: "2.5px",
                 fontSize: "1.15rem",
-                fontWeight: "bold"
+                fontWeight: "bold",
               }}
             >
               OR
@@ -104,7 +104,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
               paddingTop: "10px",
               position: "relative",
               bottom: "9px",
-              borderRadius: "5px"
+              borderRadius: "5px",
             }}
           >
             {isMobile ? (
@@ -117,7 +117,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                   // MOBILE STYLES
                   width: "195px",
                   fontSize: "15px",
-                  color: "#fff"
+                  color: "#fff",
                 }}
               />
             ) : (
@@ -136,10 +136,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
   emailSignInStart: (email, password) =>
-    dispatch(emailSignInStart({ email, password }))
+    dispatch(emailSignInStart({ email, password })),
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);

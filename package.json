@@ -6,7 +6,7 @@
     "npm": "6.14.2",
     "yarn": "1.22.0"
   },
-  "description": "An ecommerce web app built with the FERN stack.",
+  "description": "A full stack ecommerce web app built with the FERN stack.",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",

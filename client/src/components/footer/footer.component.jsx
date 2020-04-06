@@ -52,20 +52,26 @@ const Footer = ({ currentUser, signOutStart }) => {
           </div>
         )}
         {isClicked && <MoreMenuMobile />}
-        <div className="icon-container">
-          <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
-        </div>
+        {isClicked ? (
+          <div className="icon-container move-lef">
+            <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
+          </div>
+        ) : (
+          <div className="icon-container">
+            <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
+          </div>
+        )}
       </div>
     </>
   );
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  signOutStart: () => dispatch(signOutStart())
+const mapDispatchToProps = (dispatch) => ({
+  signOutStart: () => dispatch(signOutStart()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Footer);

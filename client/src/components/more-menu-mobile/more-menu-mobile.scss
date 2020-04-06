@@ -5,7 +5,7 @@
   width: 95px;
   position: relative;
   bottom: 62.5px;
-  left: 90px;
+  left: 60px;
   border: 1px solid black;
   border-radius: 5px;
   background-color: white;
@@ -17,6 +17,8 @@
   .more-menu-item {
     font-weight: bold;
     font-size: 1.25em;
+    position: relative;
+    right: 0px;
 
     &:hover {
       color: #fff;

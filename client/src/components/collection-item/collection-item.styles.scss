@@ -36,6 +36,7 @@
     position: absolute;
     top: 255px;
     display: none;
+    border-radius: 5px;
 
     @media screen and (max-width: 1050px) {
       display: block;

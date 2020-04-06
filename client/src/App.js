@@ -33,6 +33,7 @@ const App = ({ checkCurrentUser, currentUser }) => {
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
+            <Route exact path="/signinpage" component={SignInAndSignUpPage} />
             <Route exact path="/" component={HomePage} />
             <Route path="/shop" component={ShopPage} />
             <Route exact path="/about" component={AboutPage} />
@@ -58,11 +59,11 @@ const App = ({ checkCurrentUser, currentUser }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
-const mapDispatchToProps = dispatch => ({
-  checkCurrentUser: () => dispatch(checkCurrentUser())
+const mapDispatchToProps = (dispatch) => ({
+  checkCurrentUser: () => dispatch(checkCurrentUser()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -17,6 +17,7 @@ const buttonStyles = css`
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 5px;
 
   &:hover {
@@ -76,7 +77,7 @@ const newsletterButtonStyles = css`
   }
 `;
 
-const getButtonStyles = props => {
+const getButtonStyles = (props) => {
   if (props.newsletter) {
     return newsletterButtonStyles;
   }
