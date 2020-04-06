@@ -4,10 +4,7 @@ import CheckoutItem from "../../components/checkout-item/checkout-item.component
 import StripeCheckoutButton from "../../components/stripe-button/stripe-button.component.jsx";
 import { CartContext } from "../../providers/cart/cart.provider.jsx";
 
-const expYear = new Date()
-  .getFullYear()
-  .toString()
-  .slice(2, 4);
+const expYear = new Date().getFullYear().toString().slice(2, 4);
 
 const CheckoutPage = () => {
   const { cartItemsTotal, cartItems } = useContext(CartContext);
@@ -22,17 +19,36 @@ const CheckoutPage = () => {
         <div className="header-block">
           <span>Description</span>
         </div>
-        <div className="header-block">
+        <div
+          className="header-block"
+          style={{
+            position: "relative",
+            left: "40px",
+          }}
+        >
           <span>Quantity</span>
         </div>
         <div className="header-block price-checkout-header">
           <span>Price</span>
         </div>
-        <div className="header-block remove-x">
-          <span>Remove</span>
+        <div
+          className="header-block remove-x"
+          style={{
+            position: "relative",
+            right: "30px",
+          }}
+        >
+          <span
+            style={{
+              position: "relative",
+              right: "30px",
+            }}
+          >
+            Remove
+          </span>
         </div>
       </div>
-      {cartItems.map(cartItem => (
+      {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <div className="total">

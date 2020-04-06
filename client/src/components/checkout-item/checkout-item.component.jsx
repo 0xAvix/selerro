@@ -1,19 +1,21 @@
 import React, { useContext, useCallback } from "react";
 import "./checkout-item.styles.scss";
 import { CartContext } from "../../providers/cart/cart.provider.jsx";
+import { useMediaQuery } from "react-responsive";
 
 const CheckoutItem = ({ cartItem }) => {
   const { name, price, imageUrl, quantity } = cartItem;
   const { addItem, removeItem, clearItemFromCart } = useContext(CartContext);
+  const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
   const memoizedRemoveItem = useCallback(() => removeItem(cartItem), [
     removeItem,
-    cartItem
+    cartItem,
   ]);
 
   const memoizedAddItem = useCallback(() => addItem(cartItem), [
     addItem,
-    cartItem
+    cartItem,
   ]);
 
   const memoizedClearItemFromCart = useCallback(
@@ -37,9 +39,22 @@ const CheckoutItem = ({ cartItem }) => {
         </div>
       </span>
       <span className="price price-media">{price}</span>
-      <div className="remove-button" onClick={memoizedClearItemFromCart}>
-        &#10005;
-      </div>
+      {isMobile ? (
+        <div
+          className="remove-button"
+          onClick={memoizedClearItemFromCart}
+          style={{
+            position: "relative",
+            right: "25px",
+          }}
+        >
+          &#10005;
+        </div>
+      ) : (
+        <div className="remove-button" onClick={memoizedClearItemFromCart}>
+          &#10005;
+        </div>
+      )}
     </div>
   );
 };
