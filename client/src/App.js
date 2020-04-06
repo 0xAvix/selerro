@@ -37,11 +37,7 @@ const App = ({ checkCurrentUser, currentUser }) => {
             <Route path="/shop" component={ShopPage} />
             <Route exact path="/about" component={AboutPage} />
             <Route exact path="/contact" component={ContactPage} />
-            <Route
-              exact
-              path="/checkout"
-              component={currentUser ? CheckoutPage : SignInAndSignUpPage}
-            />
+            <Route exact path="/checkout" component={CheckoutPage} />
             <Route
               exact
               path="/signin"
