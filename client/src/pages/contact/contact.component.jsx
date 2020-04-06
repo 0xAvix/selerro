@@ -3,6 +3,7 @@ import "./contact.styles.scss";
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import axios from "axios";
+import { useMediaQuery } from "react-responsive";
 
 const ContactPage = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -59,6 +60,8 @@ const ContactPage = () => {
     setUserMessage({ ...userMessage, [name]: value });
   };
 
+  const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
+
   return (
     <div className="contact-page">
       <h1 className="title">Contact Us</h1>
@@ -104,18 +107,33 @@ const ContactPage = () => {
             value={subject}
             handleChange={handleChange}
           />
-          <textarea
-            name="message"
-            cols="60"
-            rows="10"
-            type="text"
-            spellCheck="true"
-            autoComplete="on"
-            placeholder="Message..."
-            value={message}
-            onChange={handleChange}
-            required
-          />
+          {isMobile ? (
+            <textarea
+              name="message"
+              cols="40"
+              rows="8"
+              type="text"
+              spellCheck="true"
+              autoComplete="on"
+              placeholder="Message..."
+              value={message}
+              onChange={handleChange}
+              required
+            />
+          ) : (
+            <textarea
+              name="message"
+              cols="60"
+              rows="10"
+              type="text"
+              spellCheck="true"
+              autoComplete="on"
+              placeholder="Message..."
+              value={message}
+              onChange={handleChange}
+              required
+            />
+          )}
           <br />
           <br />
           <div

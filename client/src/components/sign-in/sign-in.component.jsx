@@ -115,8 +115,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                 onClick={googleSignInStart}
                 style={{
                   // MOBILE STYLES
-                  width: "195px",
-                  fontSize: "15px",
+                  width: "165px",
+                  fontSize: "13.25px",
                   position: "relative",
                   right: "19px",
                 }}

@@ -73,6 +73,12 @@ textarea:focus {
   outline: none;
 }
 
+textarea {
+  @media screen and (max-width: 800px) {
+    width: 220px;
+  }
+}
+
 .contact-page-form {
   @media screen and (max-width: 800px) {
     width: 70%;
