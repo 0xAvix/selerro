@@ -12,26 +12,26 @@ const ContactPage = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const { name, email, subject, message } = userMessage;
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     setUserMessage({
       name: "",
       email: "",
       subject: "",
-      message: ""
+      message: "",
     });
 
     const formMessage = await axios.post("/api/form", {
       name,
       email,
       subject,
-      message
+      message,
     });
 
     setIsClicked(true);
@@ -53,7 +53,7 @@ const ContactPage = () => {
     return;
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     setUserMessage({ ...userMessage, [name]: value });
@@ -74,7 +74,7 @@ const ContactPage = () => {
         or by filling out the contact form on this page. We'll try our best to
         respond within 24 hours!
       </p>
-      <div>
+      <div className="contact-page-form">
         <form onSubmit={handleSubmit}>
           <FormInput
             type="text"

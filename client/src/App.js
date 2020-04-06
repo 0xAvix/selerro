@@ -33,7 +33,6 @@ const App = ({ checkCurrentUser, currentUser }) => {
       <Switch>
         <ErrorBoundary>
           <Suspense fallback={<Spinner />}>
-            <Route exact path="/signinpage" component={SignInAndSignUpPage} />
             <Route exact path="/" component={HomePage} />
             <Route path="/shop" component={ShopPage} />
             <Route exact path="/about" component={AboutPage} />

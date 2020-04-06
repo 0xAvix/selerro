@@ -68,3 +68,13 @@ textarea {
   font-size: 18px;
   display: none;
 }
+
+textarea:focus {
+  outline: none;
+}
+
+.contact-page-form {
+  @media screen and (max-width: 800px) {
+    width: 70%;
+  }
+}

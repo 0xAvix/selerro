@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
 import GoogleButton from "react-google-button";
 import { connect } from "react-redux";
 import {
@@ -77,7 +76,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                 position: "relative",
                 bottom: "2.5px",
                 fontSize: "1.15rem",
-                fontWeight: "bold",
+                fontWeight: "bolder",
+                right: "10px",
               }}
             >
               OR
@@ -117,7 +117,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
                   // MOBILE STYLES
                   width: "195px",
                   fontSize: "15px",
-                  color: "#fff",
+                  position: "relative",
+                  right: "19px",
                 }}
               />
             ) : (

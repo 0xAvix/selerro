@@ -39,7 +39,7 @@ const Footer = ({ currentUser, signOutStart }) => {
         </div>
         {currentUser ? (
           <div className="icon-container">
-            <Link as="div" title="Sign Out" onClick={signOutStart}>
+            <Link as="div" title="Sign Out" onClick={() => auth.signOut()}>
               <span className="backslash">\</span>
               <AccountCircleIcon className="sign-in-menu-icon sign-out-icon" />
             </Link>
@@ -52,15 +52,9 @@ const Footer = ({ currentUser, signOutStart }) => {
           </div>
         )}
         {isClicked && <MoreMenuMobile />}
-        {isClicked ? (
-          <div className="icon-container move-lef">
-            <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
-          </div>
-        ) : (
-          <div className="icon-container">
-            <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
-          </div>
-        )}
+        <div className="icon-container">
+          <MoreHorizIcon className="more-menu-icon" onClick={handleClick} />
+        </div>
       </div>
     </>
   );
