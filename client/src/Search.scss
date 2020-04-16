@@ -1,0 +1,34 @@
+.search-items {
+  margin-bottom: 30px;
+  @media screen and (max-width: 1350px) {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1350px) {
+  .search-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1351px) {
+  .search-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .no-matches {
+    text-align: center;
+    position: relative;
+    left: 205px;
+
+    @media screen and (min-width: 801px) and (max-width: 1350px) {
+      left: 75px;
+    }
+  }
+}

@@ -6,3 +6,49 @@
     margin-top: 40px;
   }
 }
+
+.search-link {
+  font-size: 22px;
+  text-align: right;
+  position: absolute;
+  right: 100px;
+  top: 160px;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  @media screen and (max-width: 900px) {
+    right: 30px;
+    top: 110px;
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 900px) {
+    top: 145px;
+    right: 80px;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  right: 230px;
+  border: 1px solid #333;
+  border: none;
+  padding-top: 1px;
+  height: 35px;
+  border-radius: 5px 0 0 5px;
+  margin-right: 3px;
+
+  @media screen and (max-width: 900px) {
+    top: 120px;
+    right: 160px;
+  }
+
+  @media screen and (min-width: 801px) and (max-width: 900px) {
+    top: 155px;
+    right: 210px;
+  }
+}

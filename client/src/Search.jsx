@@ -1,27 +1,8 @@
 import React, { useState } from 'react';
-import items from './items';
-
-const Item = ({ name, price, imageUrl }) => (
-  <div>
-    <h1>{name}</h1>
-    <img src={imageUrl} alt={name} />
-    <h2>Price: ${price}</h2>
-  </div>
-);
-
-const ItemList = ({ items }) => (
-  <div
-    style={{
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr 1fr 1fr',
-      gridGap: '15px',
-    }}
-  >
-    {items.map(({ id, ...otherProps }) => (
-      <Item key={id} {...otherProps} />
-    ))}
-  </div>
-);
+import items from './data/shopData';
+import CollectionItem from './components/collection-item/collection-item.component';
+import { useMediaQuery } from 'react-responsive';
+import './Search.scss';
 
 const Search = () => {
   const [searchField, setSearchField] = useState('');
@@ -29,6 +10,8 @@ const Search = () => {
   const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(searchField.toLowerCase())
   );
+
+  const isMobile = useMediaQuery({ query: '(max-width: 800px)' });
 
   return (
     <div
@@ -40,7 +23,12 @@ const Search = () => {
         marginBottom: '150px',
       }}
     >
-      <h1 style={{ fontSize: '2.5em' }}>Search Items</h1>
+      <h1
+        style={{ fontSize: '3em', marginTop: isMobile ? '70px' : '15px' }}
+        className='search-title'
+      >
+        Search Products
+      </h1>
       <input
         type='search'
         autoComplete='off'
@@ -49,13 +37,25 @@ const Search = () => {
         onChange={handleChange}
         name='searchField'
         placeholder='Search Items...'
-        style={{ marginBottom: '50px' }}
+        style={{
+          marginBottom: '50px',
+          border: 'none',
+          border: '1px solid #333',
+          padding: '7px',
+          borderRadius: '5px',
+          boxShadow: '1px 2px #000',
+          outline: 'none',
+        }}
       />
-      {filteredItems.length ? (
-        <ItemList items={filteredItems} />
-      ) : (
-        <h3>No Matches Found.</h3>
-      )}
+      <div className='search-items'>
+        {filteredItems.length ? (
+          filteredItems.map((item) => (
+            <CollectionItem key={item.id} item={item} />
+          ))
+        ) : (
+          <h3 className='no-matches'>No Matches Found.</h3>
+        )}
+      </div>
     </div>
   );
 };
