@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 60px;
-  border-top: 1px solid #333;
+  border-bottom: 2px solid #333;
   align-items: center;
 
   &:first-child {
@@ -11,16 +11,17 @@
 
   &:last-child {
     margin-bottom: 0;
+    border-bottom: 1px solid white;
   }
 
-  @media screen and (max-width: 800px) {
-    align-items: center;
-    border-top: 1px solid #333;
+  // @media screen and (max-width: 800px) {
+  //   align-items: center;
+  //   border-top: 1px solid #333;
 
-    &:first-child {
-      border-top: none;
-    }
-  }
+  //   &:first-child {
+  //     border-top: none;
+  //   }
+  // }
 
   .title {
     font-size: 28px;

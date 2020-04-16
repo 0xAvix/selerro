@@ -26,7 +26,7 @@ export default class ErrorBoundary extends React.PureComponent {
     if (this.state.hasErrored) {
       return (
         <ErrorImageOverlay>
-          <ErrorImageContainer imageUrl="https://i.imgur.com/yW2W9SC.png" />
+          <ErrorImageContainer imageUrl='https://i.imgur.com/yW2W9SC.png' />
           <ErrorImageText>
             Sorry, this page is broken! Make sure you entered the right URL!
           </ErrorImageText>
