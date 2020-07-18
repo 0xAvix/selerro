@@ -1,16 +1,14 @@
 import React from 'react';
 import './collection.styles.scss';
 import CollectionItem from '../../components/collection-item/collection-item.component.jsx';
-import { connect } from 'react-redux';
-import { selectShopCollection } from '../../redux/shop/shop.selectors.js';
 
 const CollectionPage = ({ collection }) => {
   const { title, items } = collection;
   return (
-    <div className="collection-page">
-      <h2 className="title">{title.toUpperCase()}</h2>
-      <div className="items">
-        {items.map(item => (
+    <div className='collection-page'>
+      <h2 className='title'>{title.toUpperCase()}</h2>
+      <div className='items'>
+        {items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
       </div>
@@ -18,8 +16,4 @@ const CollectionPage = ({ collection }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
-  collection: selectShopCollection(ownProps.match.params.collectionId)(state),
-});
-
-export default React.memo(connect(mapStateToProps)(CollectionPage));
+export default React.memo(CollectionPage);
