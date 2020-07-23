@@ -1,16 +1,14 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import './shop.styles.scss';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { fetchCollectionsStart } from '../../redux/shop/shop.actions.js';
 import Spinner from '../../components/spinner/spinner.component.jsx';
 import { useMediaQuery } from 'react-responsive';
 import shopData from '../../shopData';
 import CollectionPage from '../collection/collection.component';
 
-const CollectionsOverviewContainer = lazy(() =>
+const CollectionsOverview = lazy(() =>
   import(
-    '../../components/collections-overview/collections-overview.container.jsx'
+    '../../components/collections-overview/collections-overview.component.jsx'
   )
 );
 
@@ -20,11 +18,7 @@ const JacketsCollection = () => <CollectionPage collection={shopData[2]} />;
 const WomenCollection = () => <CollectionPage collection={shopData[3]} />;
 const MenCollection = () => <CollectionPage collection={shopData[4]} />;
 
-const ShopPage = ({ fetchCollectionsStart, match }) => {
-  useEffect(() => {
-    // fetchCollectionsStart();
-  }, [fetchCollectionsStart]);
-
+const ShopPage = ({ match }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
 
   return (
@@ -37,8 +31,9 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
       <Suspense fallback={<Spinner />}>
         <Route
           exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
+          path='/shop'
+          //path={`${match.path}`}
+          component={CollectionsOverview}
         />
         <Route exact path='/shop/hats' component={HatsCollection} />
         <Route exact path='/shop/jackets' component={JacketsCollection} />
@@ -50,8 +45,4 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
-});
-
-export default React.memo(connect(null, mapDispatchToProps)(ShopPage));
+export default React.memo(ShopPage);
